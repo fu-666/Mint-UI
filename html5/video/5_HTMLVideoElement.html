@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video src="video/video.mp4"
+    width="480"
+    height="360"
+    controls
+    id="video"></video>
+</body>
+<script>
+    // 获取HTMLVideoElement对象
+    let videoEle=document.getElementById('video');
+    // window.alert(videoEle)
+    // 设置HTMLVideoElement对象的宽度和高度
+    videoEle.width=200
+    videoEle.height=200
+    // 从属性中获取视频对象的宽度
+    console.log(videoEle.width)
+    // 设置HTMLVideoElement对象的的poster属性
+    videoEle.poster='video/poster.jpg'
+</script>
+</html>

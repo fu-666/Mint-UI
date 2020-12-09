@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+          width:640px;
+          margin: 0 auto;
+          border:2px solid #900;
+        }
+        #control-buttons{
+          margin: 20px 0;
+        }
+        #control-buttons button{
+          display: inline-block;
+          line-height: 30px;
+          height: 30px;
+          background-color: #900;
+          color:#fff;
+          border:none;
+          outline: none;
+          font-size:12px;
+          font-family: 'Microsoft Yahei';
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      </style>
+</head>
+
+<body>
+    <div id="container">
+        <video id="video" src="video/video.mp4" width="640" height="360" controls></video>
+        <div id="control-buttons">
+            <button onclick="playOrPause()">播放/暂停</button>
+            <button onclick="volumInc()">增加音量</button>
+            <button onclick="volumDec()">减少音量</button>
+        </div>
+    </div>
+    <script>
+        function playOrPause() {
+            let videoEle = document.getElementById('video');
+            if (videoEle.paused || videoEle.ended) {
+                videoEle.play()
+            } else {
+                videoEle.pause()
+            }
+        }
+        function volumInc() {
+            let videoEle = document.getElementById('video')
+            videoEle.volume  =Math.min(1,videoEle.volume+0.1);
+            console.log(videoEle.volume)
+        }
+        function volumDec() {
+            let videoEle = document.getElementById('video')
+            videoEle.volume =Math.max(0,videoEle.volume-0.1);
+            console.log(videoEle.volume)
+        }
+    </script>
+</body>
+
+</html>

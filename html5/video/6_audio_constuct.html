@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建audio树</title>
+</head>
+<body>
+    <div>
+        <button onclick="createPlayer()">点击 播放音乐</button>
+    </div>
+</body>
+<script>
+    // 视频对象没有构造函数
+    function createPlayer(){
+        // 创建HTMLAudioElement对象
+        let audioEle=new Audio();
+        // 设置对象地址
+        audioEle.src='audio/stronger.mp3'
+        // 显示controls属性
+        audioEle.controls=true
+        // 将对象添加到DOM树
+        document.body.appendChild(audioEle)
+    }
+</script>
+</html>

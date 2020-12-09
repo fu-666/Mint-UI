@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    <div>
+        <button onclick="createPlayer()">点击 播放视频</button>
+    </div>
+</body>
+<script>
+    function createPlayer() {
+        // 创建HTMLVideoElement对象
+        let videoEle = document.createElement('video');
+        // 设置HTMLVideoElement对象的属性
+        videoEle.width=460;
+        videoEle.height=380;
+        videoEle.poster='video/poster.jpg'
+        // 设置从HTMLMediaElement接口中继承
+        videoEle.src='video/video.mp4'
+        videoEle.controls=true
+        videoEle.preload='auto'
+        // 将对象添加到DOM树上
+        document.body.appendChild(videoEle)
+
+    }
+
+
+</script>
+
+</html>
